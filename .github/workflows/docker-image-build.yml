@@ -39,5 +39,5 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          secrets: |
+          build-args: |
             "DATABASE_URL=${{ secrets.DATABASE_URL }}"
