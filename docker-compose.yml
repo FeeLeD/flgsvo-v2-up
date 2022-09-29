@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:14
+    container_name: flgsvo-db
+    command:
+      ["postgres", "-c", "log_statement=all", "-c", "log_destination=stderr"]
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 5434:5432
+    volumes:
+      - ./pg_volume:/var/lib/postgresql/data
+
+  app:
+    build: app/
+    container_name: flgsvo-app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
