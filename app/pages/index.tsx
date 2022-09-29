@@ -41,7 +41,7 @@ const Home: NextPage<HomePageProps> = ({ stringifyPosts }) => {
 };
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  const prisma = new PrismaClient();
+  const prisma = new PrismaClient(); 
   const posts = await prisma.post.findMany({
     orderBy: {
       createdAt: "desc",

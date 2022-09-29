@@ -36,3 +36,9 @@ yarn-error.log*
 
 .env
 pg_volume
+
+app/.yarn/*
+!app/.yarn/patches
+!app/.yarn/plugins
+!app/.yarn/releases
+!app/.yarn/sdks
