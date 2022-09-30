@@ -27,6 +27,7 @@ const HomePage: FC<Props> = ({ posts }) => {
         }}
       >
         <Title
+          id="news-title"
           sx={{
             "@media (max-width: 600px)": {
               width: "100%",

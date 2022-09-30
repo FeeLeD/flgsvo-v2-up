@@ -6,11 +6,8 @@ on:
       - "master"
 
 jobs:
-  server:
+  image:
     runs-on: "ubuntu-latest"
-    env:
-      NODE_ENV: test
-      WORKING_DIR: ./interfaces/graphile
 
     steps:
       - name: Checkout
