@@ -1,9 +1,9 @@
 ARG NODE_VERSION=lts-bullseye
 
 # for Mac on M1
-FROM --platform=linux/amd64 arm64v8/node:$NODE_VERSION
+# FROM --platform=linux/amd64 arm64v8/node:$NODE_VERSION
 
-# FROM node:$NODE_VERSION
+FROM node:$NODE_VERSION
 
 ARG DATABASE_URL=postgresql://user:my_password@localhost:5435
 
